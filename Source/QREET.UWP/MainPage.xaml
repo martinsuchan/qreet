@@ -1,0 +1,64 @@
+﻿<Page x:Class="QREET.UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="26,0,0,0"
+            Text="BKP" VerticalAlignment="Center"/>
+        <TextBox x:Name="BkpBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"
+            Text="8ae3ba50-a7764953"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="26,0,0,0"
+            Text="DIČ" VerticalAlignment="Center"/>
+        <TextBox x:Name="DicBox" Grid.Row="3" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"
+            Text="00685976"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="26,0,0,0"
+            Text="Cena Kč" VerticalAlignment="Center"/>
+        <TextBox x:Name="PriceBox" Grid.Row="4" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"
+            Text="650"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="26,0,0,0"
+            Text="Datum a čas" VerticalAlignment="Center"/>
+        <DatePicker x:Name="DateBox" Grid.Row="5" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"/>
+        <TimePicker x:Name="TimeBox" Grid.Row="6" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"
+            Time="14:50:00"/>
+
+        <Button Grid.Row="7" Grid.Column="0" Margin="0,25"
+            Content="Převést na kód" Click="ConverToCodeClick"/>
+        <Button Grid.Row="7" Grid.Column="1" Margin="0,25"
+            Content="Převést zpět na hodnoty" Click="ConvertBackClick"/>
+
+        <TextBlock Grid.Row="8" Grid.Column="0"
+            Text="Hodnota QR kódu" VerticalAlignment="Center"/>
+        <TextBox x:Name="CodeBox" Grid.Row="8" Grid.Column="1"
+            FontFamily="Consolas" Width="400" HorizontalAlignment="Left"/>
+
+        <Image x:Name="QR" Grid.Row="6" Grid.RowSpan="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top"
+            Width="100" Height="100"/>
+    </Grid>
+</Page>
