@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="1ce44666-6ba9-4b49-933a-1e0fb23a089d" Publisher="CN=marti" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="1ce44666-6ba9-4b49-933a-1e0fb23a089d" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="54490MartinSuchan.QREETDemo" Publisher="CN=2681AC8F-97BF-42CE-88E8-CDCCEF67CC63" Version="1.1.0.0" />
+  <mp:PhoneIdentity PhoneProductId="0ce9963d-6d27-4d19-9e95-15c0178713c7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>QREET.UWP</DisplayName>
-    <PublisherDisplayName>marti</PublisherDisplayName>
+    <DisplayName>QREET Demo</DisplayName>
+    <PublisherDisplayName>Martin Suchan</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -15,14 +15,15 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="QREET.UWP.App">
-      <uap:VisualElements DisplayName="QREET" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="QREET" BackgroundColor="transparent">
-        <uap:DefaultTile>
+      <uap:VisualElements DisplayName="QREET Demo" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="QREET Demo" BackgroundColor="transparent">
+        <uap:DefaultTile Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" Wide310x150Logo="Assets\WideTile.png">
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="gray" />
       </uap:VisualElements>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
   </Capabilities>
 </Package>

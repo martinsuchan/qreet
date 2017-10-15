@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="QREET.UWP.EetReceiptControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,16,0"
+            Text="FIK" VerticalAlignment="Center"/>
+        <TextBox x:Name="FikBox" x:FieldModifier="internal" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,16,0"
+            Text="BKP" VerticalAlignment="Center"/>
+        <TextBox x:Name="BkpBox" x:FieldModifier="internal" Grid.Row="2" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,0,16,0"
+            Text="DIČ" VerticalAlignment="Center"/>
+        <TextBox x:Name="DicBox" x:FieldModifier="internal" Grid.Row="3" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,0,16,0"
+            Text="Cena Kč" VerticalAlignment="Center"/>
+        <TextBox x:Name="PriceBox" x:FieldModifier="internal" Grid.Row="4" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="0,0,16,0"
+            Text="Datum a čas" VerticalAlignment="Center"/>
+        <DatePicker x:Name="DateBox" x:FieldModifier="internal" Grid.Row="5" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"/>
+        <TimePicker x:Name="TimeBox" x:FieldModifier="internal" Grid.Row="6" Grid.Column="1" Margin="0,0,0,5"
+            FontFamily="Consolas" Width="200" HorizontalAlignment="Left"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Margin="0,0,16,0"
+            Text="Režim tržby" VerticalAlignment="Center"/>
+        <RadioButton x:Name="CommonRadio" x:FieldModifier="internal" Grid.Row="7" Grid.Column="1"
+            Content="Běžný" GroupName="Mode" IsChecked="True"/>
+        <RadioButton x:Name="SimplifiedRadio" x:FieldModifier="internal" Grid.Row="7" Grid.Column="1" Margin="100,0,0,0"
+            Content="Zjednodušený" GroupName="Mode"/>
+    </Grid>
+</UserControl>
