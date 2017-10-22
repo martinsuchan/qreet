@@ -23,21 +23,21 @@ A–Z [pouze velká písmena]
 mezera
 *, ., :
 ```
-Při zachování znaků výhradně z uvedené množiny bude použit tzv. alfanumerický formát QR kódu. Množina znaků používaná v klíčích a řídících strukturách navrženého formátu je proto volena právě z této množiny tak, aby nebylo zabráněno dosažení maximální možné efektivity uložení informací o účtence do QR kódů. Bude-li v hodnotě kteréhokoli pole použit znak z jiné množiny, než je uvedena výše, bude použit tzv. binární formát QR kódu.
+Při zachování znaků výhradně z uvedené množiny bude použit tzv. alfanumerický formát QR kódu. Množina znaků používaná v klíčích a řídících strukturách navrženého formátu, je proto volena právě z této množiny tak, aby nebylo zabráněno dosažení maximální možné efektivity uložení informací o účtence do QR kódů. Bude-li v hodnotě kteréhokoli pole použit znak z jiné množiny, než je uvedena výše, bude použit tzv. binární formát QR kódu.
 
-QR kód by měl být pro tištěná media generován s [úrovní kontroly chyb aspoň M](http://www.qrcode.com/en/about/error_correction.html) (obnovitelnost 15%).
+QR kód by měl být pro tištěná media generován s [úrovní kontroly chyb aspoň M](http://www.qrcode.com/en/about/error_correction.html) (obnovitelnost 15 %).
 
-Řetězec je vždy zahájen fixní hlavičkou EET*, **zde je rozdíl proti QR platbě, která používá hlavičku SPD**. Následuje verze protokolu (dvě čísla oddělená tečkou) ukončená hvězdičkou, např. 1.0*. Následně řetězec obsahuje jednotlivé atributy účtenky ve formátu:
+Řetězec je vždy zahájen fixní hlavičkou "EET*", **zde je rozdíl proti QR platbě**, která používá hlavičku "SPD*". Následuje verze protokolu (dvě čísla oddělená tečkou) ukončená hvězdičkou, např. 1.0*. Následně řetězec obsahuje jednotlivé atributy účtenky ve formátu:
 
     ${klíč}:${hodnota}*
 Tedy klíč je od hodnoty oddělen dvojtečkou, hodnota je zakončena hvězdičkou.
 
 
 **${klíč}**
-Klíč daného atributu je vždy zapsán velkými znaky z množiny znaků [A-Z-]. Seznam přípustných klíčů (základní sada atributů) je uveden v Tabulce níže. Formát může být rozšířen o proprietární klíče, které mají např. lokální význam pro konkrétní lokalitu nebo instituci.
+Klíč daného atributu je vždy zapsán velkými znaky z množiny znaků [A-Z]. Seznam přípustných klíčů (základní sada atributů) je uveden v Tabulce níže. Formát může být rozšířen o proprietární klíče, které mají např. lokální význam pro konkrétní lokalitu nebo instituci.
 
 **${hodnota}**
-Hodnota daného atributu může obsahovat libovolné znaky, ale musí být zároveň v přípustném formátu pro dané pole – viz. popis formátu hodnoty v Tabulce. Hodnota nesmí být obklopena bílými znaky (tj. za “:” a před “*” nesmí být bílé znaky) a nesmí obsahovat znak * (hvězdička). Hodnota může obsahovat znak : (dvojtečka).
+Hodnota daného atributu může obsahovat libovolné znaky, ale musí být zároveň v přípustném formátu pro dané pole – viz popis formátu hodnoty v Tabulce. Hodnota nesmí být obklopena bílými znaky (tj. za “:” a před “*” nesmí být bílé znaky) a nesmí obsahovat znak * (hvězdička). Hodnota může obsahovat znak : (dvojtečka).
 Hodnota může obsahovat speciální znaky kódované pomocí URL kódování. Díky tomuto mechanismu je možné kódovat libovolné znaky z UTF-8, hvězdičku je tedy možno do hodnoty zahrnout pomocí zápisu %2A.
 
 Pokud bude hodnota obsahovat více znaků, než připouští formát, bude zpracován pouze formátem specifikovaný počet znaků zleva, ostatní budou ignorovány.
@@ -49,7 +49,7 @@ Pokud bude hodnota obsahovat více znaků, než připouští formát, bude zprac
 | FIK      | ANO*    | 16 znaků z množiny [A-F0-9] | FIK kód, prvních 16 znaků (3 skupiny) bez mezer či pomlček | FIK:0D68FDDC306C9D48 |
 | BKP      | ANO*    | 16 znaků z množiny [A-F0-9] | BKP kód, prvních 16 znaků (2 skupiny) bez mezer či pomlček | BKP:A6CF0448FC2C806C |
 | DIC      | ANO     | 8-10 číslic            | DIČ, bez předpony "CZ" | DIC:00685976 |
-| KC       | ANO     | 1-10 znaků z množiny [0-9.] | Cena na účtence. Desetinné číslo, max. 2 desetinné cifry, Tečka jako oddělovač desetinných míst. Maximální možná hodnota je 9 999 999.99 | KC:227.79 |
+| KC       | ANO     | 1-10 znaků z množiny [0-9.] | Cena na účtence v Kč. Desetinné číslo, max. 2 desetinné cifry, Tečka jako oddělovač desetinných míst. Maximální možná hodnota je 9 999 999.99 | KC:227.79 |
 | DT       | ANO     | 12 číslic | Datum a čas tržby ve formátu YYYYMMDDhhmm, formát ISO 8601 | DT:201710131429 |
 | R        | NE      | 1 symbol B nebo Z | Režim tržby [B]ěžný nebo [Z]jednodušený | R:B |
 
@@ -99,7 +99,7 @@ Otázky a odpovědi
 ---------------
 
 **Kdo stojí za projektem QR EET?**  
-Za projektem momentálně stojím jen já, [Martin Suchan](https://twitter.com/martinsuchan). QR EET jsem vytvořil ve volném čase jako osobní výzvu navrhnout systém, který by zjednodušil lidem Účtenkovku a obecně použití EET. Pokud mě chcete kontaktovat, můžete mi napsat na Twitteru nebo na email [jméno]@[příjmení].cz.
+Za projektem momentálně stojím já, [Martin Suchan](https://twitter.com/martinsuchan). QR EET jsem vytvořil ve volném čase jako osobní výzvu navrhnout systém, který by zjednodušil lidem Účtenkovku a obecně použití EET. Pokud mě chcete kontaktovat, můžete mi napsat na Twitteru nebo na email [jméno]@[příjmení].cz.
 
 **K čemu je to dobré, když aplikace ani účtenky tyto QR kódy neobsahují?**  
 Je to tak trochu začarovaný kruh. Aplikace Účtenkovka nepodporuje QR kódy, protože nejsou na účtenkách a účtenky je nepodporují, protože pro ně není žádné využití. Pro zavedení QR kódů je nezbytné, aby někdo udělal ten první krok a tím prvním krokem je v tomto případě jednoduchý a jasný standard, který lze snadno zapojit do aplikace nebo pokladny na EET.
