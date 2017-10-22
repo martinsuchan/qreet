@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QREET.UWP", "QREET.UWP\QREET.UWP.csproj", "{5B23A6B0-DFDB-4019-AEB5-75FB8B6B839D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QREET.Lib", "QREET.Lib\QREET.Lib.csproj", "{1F52C6D5-2050-4420-827D-E5892F38CD2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QREET.Lib", "QREET.Lib\QREET.Lib.csproj", "{1F52C6D5-2050-4420-827D-E5892F38CD2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QREET.Test", "QREET.Test\QREET.Test.csproj", "{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,22 @@ Global
 		{1F52C6D5-2050-4420-827D-E5892F38CD2C}.Release|x64.Build.0 = Release|Any CPU
 		{1F52C6D5-2050-4420-827D-E5892F38CD2C}.Release|x86.ActiveCfg = Release|Any CPU
 		{1F52C6D5-2050-4420-827D-E5892F38CD2C}.Release|x86.Build.0 = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|ARM.Build.0 = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|x64.Build.0 = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Debug|x86.Build.0 = Debug|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|ARM.Build.0 = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|x64.ActiveCfg = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|x64.Build.0 = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A2316EEF-6464-4EC5-9FE8-34F9E44E5E4D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

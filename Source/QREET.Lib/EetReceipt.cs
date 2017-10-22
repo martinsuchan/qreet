@@ -28,11 +28,16 @@ namespace QREET.Lib
         public const string CommonMode = "B";
         public const string SimplifiedMode = "Z";
 
-        private static readonly Regex FIKRegex = new Regex("(?i)^[0-9A-F]{16,42}$");
+        // min length: 8+4+4 = 16 symbols, max length: 8+4+4+4+12+2 = 34 symbols
+        private static readonly Regex FIKRegex = new Regex("(?i)^[0-9A-F]{16,34}$");
+        // min length: 8+8   = 16 symbols, max length: 8+8+8+8+8    = 40 symbols
         private static readonly Regex BKPRegex = new Regex("(?i)^[0-9A-F]{16,40}$");
         private static readonly Regex DICRegex = new Regex("^[0-9]{8,10}$");
         private static readonly Regex PriceRegex = new Regex(@"^[0-9]{1,10}(\.[0-9]{1,2})?$");
+        private const decimal PriceMin = 0.01m;
+        private const decimal PriceMax = 9_999_999.99m;
         private static readonly Regex DateTimeRegex = new Regex("^[0-9]{12}$");
+        private static readonly DateTime DateTimeMin = new DateTime(2017, 10, 1);
 
         private EetReceipt() {}
 
@@ -104,6 +109,11 @@ namespace QREET.Lib
                 return false;
             }
             temp.Price = decimal.Parse(kc, CultureInfo.InvariantCulture);
+            if (temp.Price < PriceMin || temp.Price > PriceMax)
+            {
+                message = $"Price must be >= {PriceMin} and <= {PriceMax}";
+                return false;
+            }
 
             if (string.IsNullOrEmpty(dt) || !DateTimeRegex.IsMatch(dt))
             {
@@ -111,6 +121,11 @@ namespace QREET.Lib
                 return false;
             }
             temp.Date = DateTime.ParseExact(dt, "yyyyMMddHHmm", CultureInfo.InvariantCulture);
+            if (temp.Date < DateTimeMin)
+            {
+                message = $"DateTime must be >= {DateTimeMin}";
+                return false;
+            }
 
             switch (mode)
             {
