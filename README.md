@@ -1,3 +1,9 @@
+Důležité
+========
+
+**V dubnu 2018 byla publikovaná [oficiální specifikace](http://www.etrzby.cz/cs/oznameni-pro-vyvojare) QR kódů pro EET účtenky.  
+Tento článek popisuje neoficiální specifikaci, kterou jsem si v rámci cvičení navrhl v říjnu 2017.**
+
 QR EET
 ======
 
